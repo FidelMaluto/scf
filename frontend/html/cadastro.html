@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCF</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h2>Cadastrar Funcionário</h2>
+        <ul>
+            <li><a href="index.html">Principal</a></li>
+            <li><a href="funcionario.html">Funcionários</a></li>
+            <li><a href="cadastro.html">Novo Funcionário</a></li>
+        </ul>
+    </header><br>
+
+    <h1>Cadastro Rápido</h1>
+
+    <section class="formu">
+        <form id="formulario" class="formula">
+            <input type="hidden" id="id">
+            <input type="text" id="nomeCompleto" placeholder="Nome Completo" required>
+            <input type="number" id="contacto" placeholder="Contacto" required>
+            <input type="email" id="email" placeholder="E-Mail" required>
+            <input type="text" id="morada" placeholder="Morada" required>
+            <input type="text" id="nacionalidade" placeholder="Nacionalidade" required>
+            <input type="tel" id="dataNascimento" placeholder="Data de Nascimento" required>
+            <input type="text/number" id="numeroBI" placeholder="Número do BI" required>
+            <input type="number/text" id="altura" placeholder="Altura" required>
+            <input type="number/text" id="peso" placeholder="Peso" required>
+            <input type="number" id="numConta_Ibam" placeholder="Nº de conta / Ibam" required>
+            <button id="cad-btn">Cadastrar</button>
+            <button id="edita-btn" style="display: none;">Salvar edição</button>
+            <button id="cancela-btn" style="display: none;">Cancelar edição</button>
+        </form>
+    </section>
+    
+    <h1>Funcionários Cadastrados</h1><br>
+
+    <section class="tbl-container">
+        <input type="text" name="filtro" id="filtro" placeholder="Filtrar Funcionário pelo nome">
+        <table border="1" class="tabela">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome Completo</th>
+                    <th>Contacto</th>
+                    <th>E-Mail</th>
+                    <th>Morada</th>
+                    <th>Nacionalidade</th>
+                    <th>Data de Nascimento</th>
+                    <th>Número do BI</th>
+                    <th>Altura</th>
+                    <th>Peso</th>
+                    <th>Nº Conta / Ibam</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody id="datas"></tbody>
+        </table>
+    </section>
+
+</body>
+
+</html>
