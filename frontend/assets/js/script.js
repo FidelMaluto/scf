@@ -2,7 +2,9 @@ const cadastra = document.getElementById('cad-btn');
 const edita = document.getElementById('edita-btn');
 const cancela = document.getElementById('cancela-btn');
 const formulario = document.getElementById('formulario');
-
+const filtro = document.getElementById("filtro");
+const tabela = document.getElementById("tabela");
+const linhas = tabela.getElementsByTagName("tr");
 // FETCH CREATE
 cadastra.addEventListener('click', e => {
     e.preventDefault();
@@ -185,3 +187,19 @@ function showEdicao() {
     document.getElementById('edita-btn').style.display = 'inline-block';
     document.getElementById('cancela-btn').style.display = 'inline-block';
 }
+
+// Função de Filtro
+filtro.addEventListener("keyup", function () {
+  const filter = filtro.value.toLowerCase();
+
+  for (let i = 0; i < linhas.length; i++) {
+    const coluna = linhas[i].getElementsByTagName("td")[1];
+
+    if (coluna) {
+      const texto = coluna.textContent.toLowerCase();
+
+      linhas[i].style.display =
+        texto.includes(filter) ? "" : "none";
+    }
+  }
+});
