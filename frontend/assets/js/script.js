@@ -22,7 +22,7 @@ cadastra.addEventListener('click', e => {
 
     const valores = { nomeCompleto, contacto, email, morada, nacionalidade, dataNascimento, numeroBI, altura, peso, numConta_Ibam }
 
-    if(valores.value ==="") {
+    if (valores.value === "") {
         alert('Preencha todos os campos!');
         return;
     }
@@ -43,7 +43,7 @@ cadastra.addEventListener('click', e => {
             console.error('Erro ao cadastrar!', err);
         });
 
-        formulario.reset();
+    formulario.reset();
 
 });
 
@@ -64,18 +64,18 @@ function showDatas(lista) {
     lista.forEach(employee => {
         table.innerHTML += `
             <tr>
-                <td>${employee.id}</td>
-                <td>${employee.nomeCompleto}</td>
-                <td>${employee.contacto}</td>
-                <td>${employee.email}</td>
-                <td>${employee.morada}</td>
-                <td>${employee.nacionalidade}</td>
-                <td>${employee.dataNascimento}</td>
-                <td>${employee.numeroBI}</td>
-                <td>${employee.altura}</td>
-                <td>${employee.peso}</td>
-                <td>${employee.numConta_Ibam}</td>
-                <td>
+                <td data-label="ID">${employee.id}</td>
+                <td data-label="Nome">${employee.nomeCompleto}</td>
+                <td data-label="Contacto">${employee.contacto}</td>
+                <td data-label="Email">${employee.email}</td>
+                <td data-label="Morada">${employee.morada}</td>
+                <td data-label="Nacionalidade">${employee.nacionalidade}</td>
+                <td data-label="Nascimento">${employee.dataNascimento}</td>
+                <td data-label="BI">${employee.numeroBI}</td>
+                <td data-label="Altura">${employee.altura}</td>
+                <td data-label="Peso">${employee.peso}</td>
+                <td data-label="Conta">${employee.numConta_Ibam}</td>
+                <td data-label="Opções">
                     <button onclick='editar(${JSON.stringify(employee)})' class='editar'>Editar</button>
                     <button onclick='excluir(${employee.id})' class='excluir'>Excluir</button>
                 </td>
@@ -182,7 +182,7 @@ function cleaField() {
 }
 
 // Função mostrar Campos
-function showEdicao() {   
+function showEdicao() {
     document.getElementById('cad-btn').style.display = 'none';
     document.getElementById('edita-btn').style.display = 'inline-block';
     document.getElementById('cancela-btn').style.display = 'inline-block';
@@ -190,16 +190,16 @@ function showEdicao() {
 
 // Função de Filtro
 filtro.addEventListener("keyup", function () {
-  const filter = filtro.value.toLowerCase();
+    const filter = filtro.value.toLowerCase();
 
-  for (let i = 0; i < linhas.length; i++) {
-    const coluna = linhas[i].getElementsByTagName("td")[1];
+    for (let i = 0; i < linhas.length; i++) {
+        const coluna = linhas[i].getElementsByTagName("td")[1];
 
-    if (coluna) {
-      const texto = coluna.textContent.toLowerCase();
+        if (coluna) {
+            const texto = coluna.textContent.toLowerCase();
 
-      linhas[i].style.display =
-        texto.includes(filter) ? "" : "none";
+            linhas[i].style.display =
+                texto.includes(filter) ? "" : "none";
+        }
     }
-  }
 });

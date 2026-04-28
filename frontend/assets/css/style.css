@@ -1,3 +1,4 @@
+/*  RESET  */
 * {
     margin: 0;
     padding: 0;
@@ -5,323 +6,135 @@
 }
 
 body {
-    background-color: #cfc8c8c2;
-    /* background: white;
-    color: black; */
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #333;
 }
 
-/* @media (prefers-color-scheme: dark) {
-    body {
-        background: black;
-        color: white;
-    }
-} */
-
-/* Editando o cabeçalho */
-h2 {
-    color: white;
-}
-
+/*  HEADER  */
 header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    background-color: #1164a7;
-    padding: 15px;
-    position: sticky;
-    top: 0;
+    align-items: center;
+    background: #1164a7;
+    padding: 15px 20px;
+    color: white;
 }
 
 header ul {
     list-style: none;
-}
-
-header ul li {
-    display: inline-block;
-}
-
-header ul li a {
-    text-decoration: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    color: white;
-}
-
-/* Editando o campo das informações */
-h1 {
-    text-align: center;
-    margin: 5px;
-    font-size: 2rem;
-}
-
-.info {
-    width: 60%;
-    background-color: #fff;
-    margin: 40px auto;
-    text-align: center;
-    padding: 10%;
-    box-shadow: 12px 10px 5px #616060;
-}
-
-.info h1 {
-    font-size: 2.7rem;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.info h3 {
-    font-size: 1.5rem;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.info p {
-    font-size: 1.3rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-hr {
-    height: .4rem;
-    background-color: #1164a7;
-    border-radius: 8px;
-}
-
-/* Edição do Formúlario */
-.formu {
-    margin: 40px auto;
     display: flex;
-    padding: 4rem;
-    box-shadow: 10px 3px 5px #616060;
-}
-
-form {
-    display: flex;
-    width: 100%;
-    background-color: #fff;
-    justify-content: space-evenly;
-    padding: 3rem;
-    align-items: center;
-    flex-wrap: wrap;
     gap: 10px;
 }
 
-.formula {
-    flex-wrap: wrap;
-    display: flex;
-    border-radius: 4px;
-}
-
-.formula input {
-    width: 20%;
-    padding: 8px;
-    background-color: #ddd;
-    border: none;
-    border-radius: 6px;
-    min-width: 140px;
-}
-
-.formula button {
-    width: 20%;
-    padding: 8px;
-    border: none;
+header ul li a {
     color: white;
-    background-color: #1164a7;
-    border-radius: 6px;
-    cursor: pointer;
+    text-decoration: none;
 }
 
-/* Editando a Tabela */
+/*  TÍTULOS  */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Edição da página principal */
+.info {
+    border-left: 4px solid #1164a7;
+    border-right: 4px solid #1164a7;
+    border-radius: 5px;
+}
+
+.info h3, p {
+    text-align: center;
+}
+
+/*  CONTAINERS  */
+.info,
+.formu,
 .tbl-container {
-    width: 100%;
-    overflow-x: hidden;
-    table-layout: auto;
+    width: 90%;
+    margin: 30px auto;
 }
 
 .tbl-container input {
-    width: 50%;
-    padding: 6px;
-    border-radius: 6px;
+    width: 60%;
+    padding: 10px;
+    border-radius: 8px;
     border: none;
-    font-size: 1rem;
-    margin-bottom: 1rem;
+    outline: none;
+}
+
+/*  FORM  */
+form {
+    background: white;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-radius: 8px;
+}
+
+.formula input {
+    flex: 1 1 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.formula button {
+    padding: 10px;
+    border: none;
+    background: #1164a7;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/*  🔥 TABELA (CORREÇÃO REAL DO PROBLEMA)  */
+.tbl-container {
+    width: 90%;
+    margin: 20px auto;
+    overflow-x: auto; /* 👈 isto remove quebra visual sem destruir layout */
 }
 
 .tabela {
     width: 100%;
     border-collapse: collapse;
-    overflow: hidden;
+    background: white;
 }
 
 .tabela th {
-    background: #1d78c2;
-}
-
-.tabela th,
-td {
-    border: 1px solid #fff;
+    background: #1164a7;
+    color: white;
     padding: 10px;
     text-align: left;
+    white-space: nowrap;
 }
 
-.tabela tbody tr {
+.tabela td {
+    padding: 10px;
     border-bottom: 1px solid #eee;
-    transition: .3s;
+    white-space: nowrap;
 }
 
-.tabela tbody tr:hover {
-    background-color: #f1f1f1;
+.tabela tr:nth-child(even) {
+    background: #f9f9f9;
 }
 
-.tabela tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
+/*  BOTÕES  */
 .editar {
-    padding: 6px 10px;
-    background-color: #1164a7;
+    background: #1164a7;
     color: white;
     border: none;
-    border-radius: 6px;
-    cursor: pointer;
+    padding: 5px 8px;
+    border-radius: 5px;
 }
 
 .excluir {
-    padding: 6px 10px;
-    background-color: #a71611;
+    background: #c0392b;
     color: white;
     border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-/* RESPONSIVIDADE */
-
-/* Tablets */
-@media (max-width: 1024px) {
-    .info {
-        width: 90%;
-        padding: 5%;
-    }
-
-    .formu {
-        flex-direction: column;
-        padding: 2rem;
-    }
-
-    form {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .formula input,
-    .formula button {
-        width: 100%;
-    }
-}
-
-/* Telemóveis */
-@media (max-width: 768px) {
-
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    header ul li {
-        display: block;
-    }
-
-    header ul li a {
-        display: block;
-        padding: 8px 0;
-    }
-
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    .info h1 {
-        font-size: 1.8rem;
-    }
-
-    .info h3 {
-        font-size: 1.2rem;
-    }
-
-    .info p {
-        font-size: 1rem;
-    }
-
-    .formu {
-        padding: 1rem;
-    }
-
-    form {
-        padding: 1rem;
-    }
-}
-
-/* TABELA RESPONSIVA*/
-/* ===== TABELA NORMAL (DESKTOP) ===== */
-.tbl-container {
-    width: 100%;
-}
-
-.tabela {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.tabela th {
-    background: #1d78c2;
-    color: white;
-}
-
-.tabela th,
-.tabela td {
-    padding: 10px;
-    border: 1px solid #fff;
-}
-
-/* ===== MOBILE SEM SCROLL ===== */
-@media (max-width: 768px) {
-
-    .tabela thead {
-        display: none;
-    }
-
-    .tabela,
-    .tabela tbody,
-    .tabela tr,
-    .tabela td {
-        display: block;
-        width: 100%;
-    }
-
-    .tabela tr {
-        margin-bottom: 15px;
-        background: #fff;
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    .tabela td {
-        padding: 10px;
-        text-align: left;
-        border: none;
-        position: relative;
-    }
-
-    .tabela td::before {
-        content: attr(data-label);
-        font-weight: bold;
-        display: block;
-        margin-bottom: 5px;
-        color: #1164a7;
-    }
-
-    .editar,
-    .excluir {
-        width: 100%;
-        margin-top: 5px;
-    }
+    padding: 5px 8px;
+    border-radius: 5px;
 }

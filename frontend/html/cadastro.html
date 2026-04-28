@@ -29,10 +29,10 @@
             <input type="email" id="email" placeholder="E-Mail" required>
             <input type="text" id="morada" placeholder="Morada" required>
             <input type="text" id="nacionalidade" placeholder="Nacionalidade" required>
-            <input type="tel" id="dataNascimento" placeholder="Data de Nascimento" required>
-            <input type="text/number" id="numeroBI" placeholder="Número do BI" required>
-            <input type="number/text" id="altura" placeholder="Altura" required>
-            <input type="number/text" id="peso" placeholder="Peso" required>
+            <input type="date" id="dataNascimento" placeholder="Data de Nascimento" required>
+            <input type="text" id="numeroBI" placeholder="Número do BI" required>
+            <input type="number" id="altura" placeholder="Altura" required>
+            <input type="number" id="peso" placeholder="Peso" required>
             <input type="number" id="numConta_Ibam" placeholder="Nº de conta / Ibam" required>
             <button id="cad-btn">Cadastrar</button>
             <button id="edita-btn" style="display: none;">Salvar edição</button>
@@ -44,6 +44,7 @@
 
     <section class="tbl-container">
         <input type="text" name="filtro" id="filtro" placeholder="Filtrar Funcionário pelo nome">
+        <br><br>
         <table border="1" class="tabela" id="tabela">
             <thead>
                 <tr>
