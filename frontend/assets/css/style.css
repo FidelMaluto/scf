@@ -191,3 +191,137 @@ td {
     border-radius: 6px;
     cursor: pointer;
 }
+/* RESPONSIVIDADE */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .info {
+        width: 90%;
+        padding: 5%;
+    }
+
+    .formu {
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .formula input,
+    .formula button {
+        width: 100%;
+    }
+}
+
+/* Telemóveis */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    header ul li {
+        display: block;
+    }
+
+    header ul li a {
+        display: block;
+        padding: 8px 0;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .info h1 {
+        font-size: 1.8rem;
+    }
+
+    .info h3 {
+        font-size: 1.2rem;
+    }
+
+    .info p {
+        font-size: 1rem;
+    }
+
+    .formu {
+        padding: 1rem;
+    }
+
+    form {
+        padding: 1rem;
+    }
+}
+
+/* TABELA RESPONSIVA*/
+/* ===== TABELA NORMAL (DESKTOP) ===== */
+.tbl-container {
+    width: 100%;
+}
+
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela th {
+    background: #1d78c2;
+    color: white;
+}
+
+.tabela th,
+.tabela td {
+    padding: 10px;
+    border: 1px solid #fff;
+}
+
+/* ===== MOBILE SEM SCROLL ===== */
+@media (max-width: 768px) {
+
+    .tabela thead {
+        display: none;
+    }
+
+    .tabela,
+    .tabela tbody,
+    .tabela tr,
+    .tabela td {
+        display: block;
+        width: 100%;
+    }
+
+    .tabela tr {
+        margin-bottom: 15px;
+        background: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .tabela td {
+        padding: 10px;
+        text-align: left;
+        border: none;
+        position: relative;
+    }
+
+    .tabela td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+        color: #1164a7;
+    }
+
+    .editar,
+    .excluir {
+        width: 100%;
+        margin-top: 5px;
+    }
+}
