@@ -5,6 +5,7 @@ const formulario = document.getElementById('formulario');
 const filtro = document.getElementById("filtro");
 const tabela = document.getElementById("tabela");
 const linhas = tabela.getElementsByTagName("tr");
+
 // FETCH CREATE
 cadastra.addEventListener('click', e => {
     e.preventDefault();
@@ -20,7 +21,18 @@ cadastra.addEventListener('click', e => {
     const peso = document.getElementById('peso').value;
     const numConta_Ibam = document.getElementById('numConta_Ibam').value;
 
-    const valores = { nomeCompleto, contacto, email, morada, nacionalidade, dataNascimento, numeroBI, altura, peso, numConta_Ibam }
+    const valores = { 
+        nomeCompleto, 
+        contacto, 
+        email, 
+        morada, 
+        nacionalidade, 
+        dataNascimento, 
+        numeroBI, 
+        altura,
+        peso, 
+        numConta_Ibam 
+    }
 
     if (valores.value === "") {
         alert('Preencha todos os campos!');
@@ -118,7 +130,18 @@ edita.addEventListener('click', e => {
     const peso = document.getElementById('peso').value;
     const numConta_Ibam = document.getElementById('numConta_Ibam').value;
 
-    const valores = { nomeCompleto, contacto, email, morada, nacionalidade, dataNascimento, numeroBI, altura, peso, numConta_Ibam };
+    const valores = { 
+        nomeCompleto, 
+        contacto, 
+        email, 
+        morada, 
+        nacionalidade, 
+        dataNascimento, 
+        numeroBI, 
+        altura, 
+        peso, 
+        numConta_Ibam 
+    };
 
     try {
         fetch(`http://localhost:3030/funcionario/edita/${id}`, {
@@ -198,8 +221,7 @@ filtro.addEventListener("keyup", function () {
         if (coluna) {
             const texto = coluna.textContent.toLowerCase();
 
-            linhas[i].style.display =
-                texto.includes(filter) ? "" : "none";
+            linhas[i].style.display = texto.includes(filter) ? "" : "none";
         }
     }
 });
