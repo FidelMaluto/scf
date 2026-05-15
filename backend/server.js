@@ -6,18 +6,30 @@ import { fileURLToPath } from 'url';
 
 const server = express();
 const port = 3030
-F
+
 // Recriando o __dirname
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-server.use(express.static(path.join(__dirname, '../frontend')))
+server.use('/assets', express.static(path.join(__dirname, '../frontend/assets')))
 server.use(express.json());
 server.use(cors());
 
+// ROTAS
 server.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/html', 'index.html'))
+    res.sendFile(path.join(__dirname, '../frontend/html/index.html'))
 })
+
+server.get('/index', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/html/index.html'))
+})
+server.get('/funcionario', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/html/funcionario.html'))
+})
+server.get('/cadastro', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/html/cadastro.html'))
+})
+
 server.use('/', employee);
 
 server.listen(port, () => {
