@@ -2,11 +2,11 @@ import express from 'express';
 import cors from 'cors';
 import employee from './routes/employees.js';
 import path from 'path';
-import { fileURLToPath  } from 'url';
+import { fileURLToPath } from 'url';
 
 const server = express();
 const port = 3030
-
+F
 // Recriando o __dirname
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
