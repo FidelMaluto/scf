@@ -11,7 +11,7 @@ const port = 3030
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-server.use(express.static(path.join(__dirname, '../frontend/html')))
+server.use(express.static(path.join(__dirname, '../frontend')))
 server.use(express.json());
 server.use(cors());
 
